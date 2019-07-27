@@ -16,7 +16,7 @@ Before you can use this repo make sure you have [Docker](https://www.docker.com/
 
 ## Components Versions
 *	PHP v5.6.40
-*	Nginx v2.4.25
+*	Nginx v1.10.3
 *	MySQL v5.7.26
 *	Redis v5.0.5
 ------
