@@ -15,7 +15,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends libpng-dev libj
 RUN apt-get update -y \
     && apt-get upgrade -y \
     && apt-get install -y nginx \
-    && service nginx restart
     && apt-get install -y zlib1g-dev \
     && docker-php-ext-configure gd --with-jpeg-dir=/usr/lib \
     && docker-php-ext-install gd \
@@ -26,4 +25,6 @@ RUN apt-get update -y \
     && apt-get purge --auto-remove -y libjpeg-dev libmcrypt-dev libcurl3-dev libxml2-dev libicu-dev \
     && docker-php-ext-install mysqli \
     && docker-php-ext-install pdo_mysql \
-    && apt-get autoremove \
+    && apt-get autoremove
+
+RUN service nginx restart
