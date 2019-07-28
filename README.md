@@ -5,13 +5,16 @@
 ![Logo](./assets/logo.jpg)
 ------
 
+If you are looking for  PHP5.6 with Apache use the following project <br>
+![Dockerized PHP5.6 with Apache2](https://github.com/eduardevops/dockerized-php5.6-apache)
+
 # INFO!!!
 ####  Still working on this. All necessary comments will be provided at the very end
 ####  Don't use this
 
 ------
 ## First things first
-Before you can use this repo make sure you have [Docker](https://www.docker.com/) and [Docker Compose](https://docs.docker.com/compose/install/) installed
+Before you can use this repo make sure you have ![Docker](https://www.docker.com/) and ![Docker Compose](https://docs.docker.com/compose/install/) installed
 
 
 ## Components Versions
@@ -87,14 +90,9 @@ cd /path/to/dockerized-php5.6-apache
 docker-compose up -d
 ```
 
-#### Animation
-![Animation](./assets/docker-compose-up.gif)
 
 ------
 Check logs in real-time
 ```sh
 docker-compose logs -f
 ```
-
-#### Animation
-![Animation](./assets/docker-compose-logs.gif)
