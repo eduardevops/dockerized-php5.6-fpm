@@ -42,11 +42,8 @@ The list doesn't contain git generated files and repo assets (e.g. README.md, lo
 │   └── web_restore.sh
 ├── conf
 │   ├── apache-reverse-proxy.conf
-│   ├── apache2.conf
-│   ├── httpd.conf
 │   ├── nginx-reverse-proxy.conf
 |   ├── website.conf
-│   └── website-ssl.conf
 ├── docker-compose-alter.yml
 ├── docker-compose.yml
 └── web
