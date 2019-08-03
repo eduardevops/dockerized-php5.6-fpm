@@ -1,7 +1,6 @@
 FROM php:5.6-fpm
 
 RUN mkdir -p /var/www/html/website
-#VOLUME web:/var/www/html/website
 
 COPY  ./conf/website.conf /etc/nginx/sites-available/website.conf
 COPY  web /var/www/html/website
