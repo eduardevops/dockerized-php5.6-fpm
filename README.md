@@ -23,7 +23,7 @@ Before you can use this repo make sure you have ![Docker](https://www.docker.com
 Make sure to rename config files and their content to something that better reflects your project. In fact rename everything.
 In config folder you will find files for proxying web, for both Apache and Nginx, whichever suits you the best
 
-------
+
 #### Content
 The list doesn't contain git generated files and repo assets (e.g. README.md, logo.jpg)
 
@@ -48,6 +48,7 @@ The list doesn't contain git generated files and repo assets (e.g. README.md, lo
     └── index.php
 ```
 
+------
 #### HowTo
 Clone repo to your server (I would recommend using /opt directory)
 ```less
@@ -65,3 +66,4 @@ Check logs in real-time
 ```less
 docker-compose logs -f
 ```
+------
