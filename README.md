@@ -53,8 +53,8 @@ Clone repo to your server (I would recommend using /opt directory)
 sudo git clone https://github.com/eduardevops/dockerized-php5.6-nginx.git
 ```
 Put your webapp/website into the 'web' folder.
-
 Navigate to the project folder and start containers
+
 ```less
 cd /path/to/dockerized-php5.6-apache
 docker-compose up -d
