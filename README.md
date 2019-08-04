@@ -9,16 +9,20 @@ Once I got a freelance job to dockerize a web application based on PHP 5.6 with 
 If you are looking for  PHP5.6 with Apache use the following project <br>
 ![Dockerized PHP5.6 with Apache2](https://github.com/eduardevops/dockerized-php5.6-apache)
 
-
-#### First things first
-Before you can use this repo make sure you have ![Docker](https://www.docker.com/) and ![Docker Compose](https://docs.docker.com/compose/install/) installed
-
-
 #### Components Versions
 *	PHP v5.6.40
 *	Nginx v1.10.3
 *	MySQL v5.7.26
 *	Redis v5.0.5
+
+------
+
+#### First things first
+Before you can use this repo make sure you have ![Docker](https://www.docker.com/) and ![Docker Compose](https://docs.docker.com/compose/install/) installed
+
+Make sure to rename config files and their content to something that better reflects your project. In fact rename everything.
+In config folder you will find files for proxying web, for both Apache and Nginx, whichever suits you the best
+
 ------
 #### Content
 The list doesn't contain git generated files and repo assets (e.g. README.md, logo.jpg)
@@ -44,10 +48,7 @@ The list doesn't contain git generated files and repo assets (e.g. README.md, lo
     └── index.php
 ```
 
-#### ToDo
-All names and parameters can be, and in most cases should be edited.
-
-#### Run
+#### HowTo
 Clone repo to your server (I would recommend using /opt directory)
 ```less
 sudo git clone https://github.com/eduardevops/dockerized-php5.6-nginx.git
