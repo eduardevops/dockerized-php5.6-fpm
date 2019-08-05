@@ -12,7 +12,7 @@ If you are looking for  PHP5.6 with Apache use the following project <br>
 #### Components Versions
 *	PHP v5.6.40
 *	Nginx v1.10.3
-*	MySQL v5.7.26
+*	MySQL v5.7.27
 *	Redis v5.0.5
 
 ------
