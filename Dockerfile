@@ -3,6 +3,7 @@ FROM php:5.6-fpm
 RUN mkdir -p /var/www/html/website
 
 COPY  ./conf/website.conf /etc/nginx/sites-available/website.conf
+COPY  ./conf/php.ini /usr/local/etc/php/
 COPY  web /var/www/html/website
 
 RUN chown -R www-data:www-data /var/www/html/website \
