@@ -87,4 +87,3 @@ docker-compose logs -f
 ```
 #### Illustration
 ![Compose Logs](https://rawcdn.githack.com/eduardevops/dockerized-php5.6-fpm/f746c13c3e6e30e79b58eefdf3a08ba76b17de15/assets/docker-compose-logs.gif)
------
