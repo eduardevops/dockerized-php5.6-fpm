@@ -56,6 +56,7 @@ The list doesn't contain git generated files and repo assets (e.g. README.md, lo
 ├── conf
 │   ├── apache-reverse-proxy.conf
 │   ├── nginx-reverse-proxy.conf
+|   ├── php.ini
 |   ├── website.conf
 ├── docker-compose-alter.yml
 ├── docker-compose.yml
@@ -76,14 +77,14 @@ Navigate to the project folder and start containers
 cd /path/to/dockerized-php5.6-fpm
 docker-compose up -d
 ```
-#### Illustrations
+#### Illustration
 ![Compose Up](https://rawcdn.githack.com/eduardevops/dockerized-php5.6-apache/8b673db930eb8bc6401b74774ade1a40d808649c/assets/docker-compose-up.gif)
 
 
 Check logs in real-time
-```
+```less
 docker-compose logs -f
 ```
-#### Illustrations
+#### Illustration
 ![Compose Logs](https://rawcdn.githack.com/eduardevops/dockerized-php5.6-fpm/f746c13c3e6e30e79b58eefdf3a08ba76b17de15/assets/docker-compose-logs.gif)
 -----
