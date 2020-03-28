@@ -20,7 +20,6 @@ For PHP5.6 with Apache2 use ![Dockerized PHP5.6 with Apache2](https://github.com
 *	PHP-FPM v5.6.40
 *	Nginx   v1.10.3
 *	MySQL   v5.7.28
-*	Redis   v5.0.7
 
 ### Prerequisites
 *	[Docker](https://www.docker.com/)
