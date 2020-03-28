@@ -57,7 +57,7 @@ For PHP5.6 with Apache2 use ![Dockerized PHP5.6 with Apache2](https://github.com
 All names can be, and, in most cases, should be changed.
 
 ### php.ini
-In case you need additional configurations for PHP. Edit this file before deploying the container.
+In case you need additional configurations for PHP, еdit this file before deploying the container.
 
 ### website.conf
 Basic vhost config file for Apache2.
