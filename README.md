@@ -8,7 +8,7 @@
 ### Table of contents
 * [Status](#Status)
 * [Versions](#Versions)
-* [Build With](#Build-With)
+* [Prerequisites](#Prerequisites)
 * [Project Tree](#Project-Tree)
 * [Backup Folder](#Backup-Folder)
 * [Rename](#Rename)
@@ -28,9 +28,6 @@ For PHP5.6 with Apache2 use ![Dockerized PHP5.6 with Apache2](https://github.com
 -----
 
 ### Project Tree
-Content
-The list doesn't contain git generated files and repo assets (e.g. README.md, logo.jpg)
-
 ```less
 ├── .env.db
 ├── .env.web
@@ -43,19 +40,18 @@ The list doesn't contain git generated files and repo assets (e.g. README.md, lo
 ├── conf
 |   ├── php.ini
 |   ├── website.conf
-├── docker-compose-alter.yml
 ├── docker-compose.yml
 └── web
     └── index.php
 ```
 
 ### Backup Folder
-| File                        | Description                                                                                   |
-| :-------------------------- |:--------------------------------------------------------------------------------------------- |
-| db_backup.sh                | Small script to backup MySQL database                                                         |      
-| db_restore                  | Small script to backup web Folder                                                             |
-| web_backup.sh               | Small script to restore MySQL database                                                        |
-| web_restore.sh              | Small script to restore web Folder                                                            |
+| File                        | Description                              |
+| :-------------------------- |:---------------------------------------- |
+| db_backup.sh                | Small script to backup MySQL database    |      
+| db_restore                  | Small script to backup web Folder        |
+| web_backup.sh               | Small script to restore MySQL database   |
+| web_restore.sh              | Small script to restore web Folder       |
 
 ### Rename
 All names can be, and, in most cases, should be changed.
@@ -75,7 +71,7 @@ Clone repo to your server (I would recommend using /opt directory)
 sudo git clone https://github.com/eduardevops/dockerized-php5.6-fpm.git
 ```
 
-Put your webapp/website into the 'web' folder. <br>
+Put your webapp/website into the ```web``` folder. <br>
 Navigate to the project folder and start containers
 
 ```less
