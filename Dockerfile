@@ -7,6 +7,9 @@ COPY  ./conf/website.conf /etc/nginx/sites-available/website.conf
 COPY  ./conf/php.ini /usr/local/etc/php/
 COPY  web /var/www/html/website
 
+# Disable IPv6 support in Nginx
+RUN   sed '/listen [::]:80/d' /etc/nginx/nginx.conf
+
 RUN chown -R www-data:www-data /var/www/html/website \
     &&  rm -f /etc/nginx/sites-enabled/default /var/www/html/index.nginx-debian.html \
     &&  ln -s /etc/nginx/sites-available/website.conf /etc/nginx/sites-enabled
