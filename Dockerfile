@@ -1,3 +1,4 @@
+# Base image
 FROM php:5.6-fpm
 
 RUN mkdir -p /var/www/html/website
@@ -7,15 +8,18 @@ COPY  ./conf/website.conf /etc/nginx/sites-available/website.conf
 COPY  ./conf/php.ini /usr/local/etc/php/
 COPY  web /var/www/html/website
 
+# Install Nginx and other necessary libraries
+RUN apt-get update && apt-get install -y --no-install-recommends nginx libpng-dev libjpeg-dev libjpeg62-turbo libmcrypt4 libmcrypt-dev libcurl3-dev libxml2-dev libxslt-dev libicu-dev  && rm -rf /var/lib/apt/lists/*
+
+# Configure Nginx
+RUN chown -R www-data:www-data /var/www/html/website \
+    &&  unlink /etc/nginx/sites-enabled/default \
+    &&  ln -s /etc/nginx/sites-available/website.conf /etc/nginx/sites-enabled
+
 # Disable IPv6 support in Nginx
 RUN   sed '/listen [::]:80/d' /etc/nginx/nginx.conf
 
-RUN chown -R www-data:www-data /var/www/html/website \
-    &&  rm -f /etc/nginx/sites-enabled/default /var/www/html/index.nginx-debian.html \
-    &&  ln -s /etc/nginx/sites-available/website.conf /etc/nginx/sites-enabled
-
-RUN apt-get update && apt-get install -y --no-install-recommends nginx libpng-dev libjpeg-dev libjpeg62-turbo libmcrypt4 libmcrypt-dev libcurl3-dev libxml2-dev libxslt-dev libicu-dev  && rm -rf /var/lib/apt/lists/*
-
+# Install PHP and PHP extensions
 RUN apt-get update -y \
     && apt-get upgrade -y \
     && apt-get install -y zlib1g-dev \
@@ -31,8 +35,7 @@ RUN apt-get update -y \
     && apt-get autoremove
 
 # Exposing web ports
-EXPOSE 80 443
+EXPOSE 80
 
 STOPSIGNAL SIGTERM
-
 CMD ["nginx", "-g", "daemon off;"]
