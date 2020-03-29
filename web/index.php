@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Dockerized PHP5.6-FPM</h1>
+
 <?php
-phpinfo();
+echo "It Works";
 ?>
+
+</body>
+</html>
