@@ -1,6 +1,7 @@
 FROM php:5.6-fpm
 
 RUN mkdir -p /var/www/html/website
+VOLUME web:/var/www/html/website
 
 COPY  ./conf/website.conf /etc/nginx/sites-available/website.conf
 COPY  ./conf/php.ini /usr/local/etc/php/
@@ -25,5 +26,10 @@ RUN apt-get update -y \
     && docker-php-ext-install mysqli \
     && docker-php-ext-install pdo_mysql \
     && apt-get autoremove
+
+# Exposing web ports
+EXPOSE 80 443
+
+STOPSIGNAL SIGTERM
 
 CMD ["nginx", "-g", "daemon off;"]
