@@ -16,8 +16,8 @@ RUN chown -R www-data:www-data /var/www/html/website \
     &&  unlink /etc/nginx/sites-enabled/default \
     &&  ln -s /etc/nginx/sites-available/website.conf /etc/nginx/sites-enabled
 
-# Disable IPv6 support in Nginx
-RUN   sed '/listen [::]:80/d' /etc/nginx/nginx.conf
+RUN sed -i 's/listen = 127.0.0.1:9000/;listen = 127.0.0.1:9000/g' /usr/local/etc/php-fpm.d/www.conf
+RUN sed -i '/;listen = 127.0.0.1:9000/a listen = /var/run/php5-fpm.sock' /usr/local/etc/php-fpm.d/www.conf
 
 # Install PHP and PHP extensions
 RUN apt-get update -y \
@@ -35,7 +35,8 @@ RUN apt-get update -y \
     && apt-get autoremove
 
 # Exposing web ports
-EXPOSE 80
+EXPOSE 80 9000
 
 STOPSIGNAL SIGTERM
 CMD ["nginx", "-g", "daemon off;"]
+#CMD ["/usr/local/sbin/php-fpm", "--daemonize"]
