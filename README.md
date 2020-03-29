@@ -19,7 +19,7 @@ For PHP5.6 with Apache2 use ![Dockerized PHP5.6 with Apache2](https://github.com
 ###  Versions
 *	PHP-FPM v5.6.40
 *	Nginx   v1.10.3
-*	MySQL   v5.7.28
+*	MySQL   v5.7.29
 
 ### Prerequisites
 *	[Docker](https://www.docker.com/)
