@@ -49,4 +49,4 @@ CMD ["/entrypoint.sh"]
 
 # CMD ["nginx", "-g", "daemon off;"]
 CMD ["/usr/local/sbin/php-fpm","-D","--fpm-config","/usr/local/etc/php-fpm.d/www.conf"]
-/usr/local/sbin/php5-fpm --D --fpm-config /usr/local/etc/php-fpm.d/www.conf
+# /usr/local/sbin/php5-fpm --D --fpm-config /usr/local/etc/php-fpm.d/www.conf
