@@ -39,6 +39,8 @@ ADD ./conf/supervisord.conf /etc/supervisord.conf
 ADD ./conf/php5-fpm.ini /usr/local/etc/php-fpm.d/www.conf
 ADD entrypoint.sh /entrypoint.sh
 
+RUN chmod +x /entrypoint.sh
+
 # Exposing web ports
 EXPOSE 80 9000
 
