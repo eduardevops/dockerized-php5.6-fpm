@@ -36,7 +36,7 @@ RUN apt-get update -y \
 
 
 ADD ./conf/supervisord.conf /etc/supervisord.conf
-ADD ./conf/php5-fpm.ini /usr/local/etc/php-fpm.d/www.conf
+ADD ./conf/www.conf /usr/local/etc/php-fpm.d/www.conf
 ADD entrypoint.sh /entrypoint.sh
 
 RUN chmod +x /entrypoint.sh
@@ -48,4 +48,5 @@ STOPSIGNAL SIGTERM
 CMD ["/entrypoint.sh"]
 
 # CMD ["nginx", "-g", "daemon off;"]
-# CMD ["/usr/local/sbin/php-fpm","-D","-R","--fpm-config","/usr/local/etc/php-fpm.d/www.conf"]
+CMD ["/usr/local/sbin/php-fpm","-D","--fpm-config","/usr/local/etc/php-fpm.d/www.conf"]
+/usr/local/sbin/php5-fpm --D --fpm-config /usr/local/etc/php-fpm.d/www.conf
