@@ -16,6 +16,9 @@ RUN chown -R www-data:www-data /var/www/html/website \
     &&  unlink /etc/nginx/sites-enabled/default \
     &&  ln -s /etc/nginx/sites-available/website.conf /etc/nginx/sites-enabled
 
+# RUN sed -i 's/listen = 127.0.0.1:9000/;listen = 127.0.0.1:9000/g' /usr/local/etc/php-fpm.d/www.conf
+# RUN sed -i '/;listen = 127.0.0.1:9000/a listen = /var/run/php5-fpm.sock' /usr/local/etc/php-fpm.d/www.conf
+
 # Install PHP and PHP extensions
 RUN apt-get update -y \
     && apt-get upgrade -y \
@@ -31,8 +34,16 @@ RUN apt-get update -y \
     && docker-php-ext-install pdo_mysql \
     && apt-get autoremove
 
+
+ADD ./conf/supervisord.conf /etc/supervisord.conf
+ADD ./conf/php5-fpm.ini /usr/local/etc/php-fpm.d/www.conf
+ADD entrypoint.sh /entrypoint.sh
+
 # Exposing web ports
 EXPOSE 80 9000
 
 STOPSIGNAL SIGTERM
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["/entrypoint.sh"]
+
+# CMD ["nginx", "-g", "daemon off;"]
+# CMD ["/usr/local/sbin/php-fpm","-D","-R","--fpm-config","/usr/local/etc/php-fpm.d/www.conf"]
