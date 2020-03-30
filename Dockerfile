@@ -9,7 +9,7 @@ COPY  ./conf/php.ini /usr/local/etc/php/
 COPY  web /var/www/html/website
 
 # Install Nginx and other necessary libraries
-RUN apt-get update && apt-get install -y --no-install-recommends nginx libpng-dev libjpeg-dev libjpeg62-turbo libmcrypt4 libmcrypt-dev libcurl3-dev libxml2-dev libxslt-dev libicu-dev  && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y --no-install-recommends nginx supervisor libpng-dev libjpeg-dev libjpeg62-turbo libmcrypt4 libmcrypt-dev libcurl3-dev libxml2-dev libxslt-dev libicu-dev  && rm -rf /var/lib/apt/lists/*
 
 # Configure Nginx
 RUN chown -R www-data:www-data /var/www/html/website \
