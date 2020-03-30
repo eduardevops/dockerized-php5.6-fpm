@@ -52,6 +52,14 @@ For PHP5.6 with Apache2 use ![Dockerized PHP5.6 with Apache2](https://github.com
 | web_backup.sh               | Small script to restore MySQL database   |
 | web_restore.sh              | Small script to restore web Folder       |
 
+### Config Folder
+| File                        | Description                              |
+| :-------------------------- |:---------------------------------------- |
+| php.ini                     | Edit this file before deploying the container, in case you need custom PHP values |      
+| supervisord.conf            | supervisord.conf basic config                                                     |
+| website.conf                | Nginx config for for PHP5-FPM                                                     |
+| www.conf                    | PHP5-FPM config                                                                   |
+
 ### Rename
 All names can be, and, in most cases, should be changed.
 
