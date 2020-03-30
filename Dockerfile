@@ -1,9 +1,12 @@
 # Base image
 FROM php:5.6-fpm
 
-RUN mkdir -p /var/www/html/website
-VOLUME web:/var/www/html/website
+# Making web folder
+# RUN mkdir -p /var/www/html/website
+# VOLUME web:/var/www/html/website
 
+# Configuring web 
+RUN   mkdir -p /var/www/html/website
 COPY  ./conf/website.conf /etc/nginx/sites-available/website.conf
 COPY  ./conf/php.ini /usr/local/etc/php/
 COPY  web /var/www/html/website
@@ -15,9 +18,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends nginx superviso
 RUN chown -R www-data:www-data /var/www/html/website \
     &&  unlink /etc/nginx/sites-enabled/default \
     &&  ln -s /etc/nginx/sites-available/website.conf /etc/nginx/sites-enabled
-
-# RUN sed -i 's/listen = 127.0.0.1:9000/;listen = 127.0.0.1:9000/g' /usr/local/etc/php-fpm.d/www.conf
-# RUN sed -i '/;listen = 127.0.0.1:9000/a listen = /var/run/php5-fpm.sock' /usr/local/etc/php-fpm.d/www.conf
 
 # Install PHP and PHP extensions
 RUN apt-get update -y \
@@ -34,11 +34,14 @@ RUN apt-get update -y \
     && docker-php-ext-install pdo_mysql \
     && apt-get autoremove
 
-
+# Use supervisord instead of direct run for Nginx and PHP
 ADD ./conf/supervisord.conf /etc/supervisord.conf
-ADD ./conf/www.conf /usr/local/etc/php-fpm.d/www.conf
-ADD entrypoint.sh /entrypoint.sh
 
+# PHP-FPM basic config file
+ADD ./conf/www.conf /usr/local/etc/php-fpm.d/www.conf
+
+# Adding startup script for Nginx and PHP
+ADD startup.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 # Exposing web ports
@@ -46,7 +49,3 @@ EXPOSE 80 9000
 
 STOPSIGNAL SIGTERM
 CMD ["/entrypoint.sh"]
-
-# CMD ["nginx", "-g", "daemon off;"]
-CMD ["/usr/local/sbin/php-fpm","-D","--fpm-config","/usr/local/etc/php-fpm.d/www.conf"]
-# /usr/local/sbin/php5-fpm --D --fpm-config /usr/local/etc/php-fpm.d/www.conf
