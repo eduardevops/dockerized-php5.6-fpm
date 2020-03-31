@@ -44,7 +44,7 @@ ADD ./conf/www.conf /usr/local/etc/php-fpm.d/www.conf
 ADD /entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
-# Exposing web ports
+# Exposing ports
 EXPOSE 80 9000
 
 CMD ["/entrypoint.sh"]

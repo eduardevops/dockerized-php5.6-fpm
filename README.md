@@ -57,7 +57,7 @@ For PHP5.6 with Apache2 use ![Dockerized PHP5.6 with Apache2](https://github.com
 | :-------------------------- |:---------------------------------------- |
 | php.ini                     | Edit this file before deploying the container, in case you need custom PHP values |      
 | supervisord.conf            | supervisord.conf basic config                                                     |
-| website.conf                | Nginx config for for PHP5-FPM                                                     |
+| website.conf                | Nginx config                                                                      |
 | www.conf                    | PHP5-FPM config                                                                   |
 
 ### Rename
