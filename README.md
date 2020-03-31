@@ -58,16 +58,7 @@ For PHP5.6 with Apache2 use ![Dockerized PHP5.6 with Apache2](https://github.com
 | php.ini                     | Edit this file before deploying the container, in case you need custom PHP values |      
 | supervisord.conf            | supervisord.conf basic config                                                     |
 | website.conf                | Nginx config                                                                      |
-| www.conf                    | PHP5-FPM config                                                                   |
-
-### Rename
-All names can be, and, in most cases, should be changed.
-
-### php.ini
-In case you need additional configurations for PHP, еdit this file before deploying the container.
-
-### website.conf
-Basic vhost config file for Apache2.
+| fpm.conf                    | PHP5-FPM config                                                                   |
 
 -----
 
