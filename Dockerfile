@@ -38,7 +38,7 @@ RUN apt-get update -y \
 ADD ./conf/supervisord.conf /etc/supervisord.conf
 
 # PHP-FPM basic config file
-ADD ./conf/www.conf /usr/local/etc/php-fpm.d/www.conf
+ADD ./conf/fpm.conf /usr/local/etc/php-fpm.d/www.conf
 
 # Adding startup script for Nginx and PHP
 ADD /entrypoint.sh /entrypoint.sh
