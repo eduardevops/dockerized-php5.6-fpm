@@ -37,8 +37,10 @@ For PHP5.6 with Apache2 use ![Dockerized PHP5.6 with Apache2](https://github.com
 │   ├── web_backup.sh
 │   └── web_restore.sh
 ├── conf
+|   ├── fpm.conf
 |   ├── php.ini
-|   ├── website.conf
+|   ├── supervisord.conf
+│   └── website.conf
 ├── docker-compose.yml
 └── web
     └── index.php
@@ -54,11 +56,11 @@ For PHP5.6 with Apache2 use ![Dockerized PHP5.6 with Apache2](https://github.com
 
 ### Config Folder
 | File                        | Description                              |
-| :-------------------------- |:---------------------------------------- |
+| :-------------------------- |:--------------------------------------------------------------------------------- |
+| fpm.conf                    | PHP5-FPM config                                                                   |
 | php.ini                     | Edit this file before deploying the container, in case you need custom PHP values |      
 | supervisord.conf            | supervisord.conf basic config                                                     |
 | website.conf                | Nginx config                                                                      |
-| fpm.conf                    | PHP5-FPM config                                                                   |
 
 -----
 
