@@ -5,7 +5,7 @@ FROM php:5.6-fpm
 # RUN mkdir -p /var/www/html/website
 # VOLUME web:/var/www/html/website
 
-# Configuring web 
+# Configuring web
 RUN   mkdir -p /var/www/html/website
 COPY  ./conf/website.conf /etc/nginx/sites-available/website.conf
 COPY  ./conf/php.ini /usr/local/etc/php/
@@ -41,11 +41,10 @@ ADD ./conf/supervisord.conf /etc/supervisord.conf
 ADD ./conf/www.conf /usr/local/etc/php-fpm.d/www.conf
 
 # Adding startup script for Nginx and PHP
-ADD startup.sh /entrypoint.sh
+ADD /entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 # Exposing web ports
 EXPOSE 80 9000
 
-STOPSIGNAL SIGTERM
 CMD ["/entrypoint.sh"]
