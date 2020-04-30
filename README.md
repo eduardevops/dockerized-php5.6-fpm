@@ -28,6 +28,7 @@ For PHP5.6 with Apache2 use ![Dockerized PHP5.6 with Apache2](https://github.com
 ### Project Tree
 ```less
 ├── .env.db
+├── .env.web
 ├── Dockerfile
 ├── backup
 │   ├── db_backup.sh
@@ -52,14 +53,18 @@ For PHP5.6 with Apache2 use ![Dockerized PHP5.6 with Apache2](https://github.com
 | web_backup.sh               | Small script to restore MySQL database   |
 | web_restore.sh              | Small script to restore web Folder       |
 
+### Config Folder
+| File                        | Description                              |
+| :-------------------------- |:------------------------------------------------------------------------------------ |
+| fpm.conf                    | Custom PHP-FPM config                                                                |
+| php.ini                     | For additional configurations of PHP, еdit this file before deploying the container. |      
+| supervisord.conf            | supervisord.conf basic config                                                        |
+| website.conf                | Basic config file for Nginx.                                                         |
+
 ### Rename
 All names can be, moreover, in most cases, should be changed.
 
-### php.ini
-For additional configurations of PHP, еdit this file before deploying the container.
-
-### website.conf
-Basic config file for Nginx.
+-----
 
 ### Deployment
 Clone repo to your server. I suggest using ```/opt``` directory
