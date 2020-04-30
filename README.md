@@ -24,7 +24,6 @@ For PHP5.6 with Apache2 use ![Dockerized PHP5.6 with Apache2](https://github.com
 ### Prerequisites
 *	[Docker](https://www.docker.com/)
 *	[Docker Compose](https://docs.docker.com/compose/install/)
------
 
 ### Project Tree
 ```less
@@ -61,8 +60,6 @@ For additional configurations of PHP, еdit this file before deploying the conta
 
 ### website.conf
 Basic config file for Nginx.
-
------
 
 ### Deployment
 Clone repo to your server. I suggest using ```/opt``` directory
