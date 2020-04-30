@@ -1,4 +1,4 @@
-### Run any PHP-FPM 5.6 website inside Docker container
+### Dockerized PHP5.6-FPM
 
 ![Logo](./assets/logo.jpg)
 
@@ -65,8 +65,7 @@ For PHP5.6 with Apache2 use ![Dockerized PHP5.6 with Apache2](https://github.com
 -----
 
 ### Deployment
-Clone repo to your server. I would recommend using ```/opt``` directory
-
+Clone repo to your server. I suggest using ```/opt``` directory
 ```less
 sudo git clone https://github.com/eduardevops/dockerized-php5.6-fpm.git
 ```
@@ -77,9 +76,4 @@ Navigate to the project folder and start containers.
 ```less
 cd /path/to/dockerized-php5.6-fpm
 docker-compose up -d
-```
-
-Check logs in real-time
-```less
-docker-compose logs -f
 ```

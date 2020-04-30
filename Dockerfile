@@ -1,10 +1,6 @@
 # Base image
 FROM php:5.6-fpm
 
-# Making web folder
-# RUN mkdir -p /var/www/html/website
-# VOLUME web:/var/www/html/website
-
 # Configuring web
 RUN   mkdir -p /var/www/html/website
 COPY  ./conf/website.conf /etc/nginx/sites-available/website.conf
@@ -45,6 +41,6 @@ ADD /entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 # Exposing ports
-EXPOSE 80 9000
+EXPOSE 80 443 9000
 
 CMD ["/entrypoint.sh"]
