@@ -7,19 +7,14 @@
 
 ### Table of contents
 * [Status](#Status)
-* [Versions](#Versions)
 * [Prerequisites](#Prerequisites)
 * [Project Tree](#Project-Tree)
 * [Backup Folder](#Backup-Folder)
+* [Config Folder](#Config-Folder)
 * [Rename](#Rename)
 * [Deployment](#Deployment)
 
 For PHP5.6 with Apache2 use ![Dockerized PHP5.6 with Apache2](https://github.com/eduardevops/dockerized-php5.6)
-
-###  Versions
-*	PHP-FPM v5.6.40
-*	Nginx   v1.10.3
-*	MySQL   v5.7.29
 
 ### Prerequisites
 *	[Docker](https://www.docker.com/)
