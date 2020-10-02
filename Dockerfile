@@ -31,13 +31,13 @@ RUN apt-get update -y \
     && apt-get autoremove
 
 # Use supervisord instead of direct run for Nginx and PHP
-ADD ./conf/supervisord.conf /etc/supervisord.conf
+COPY ./conf/supervisord.conf /etc/supervisord.conf
 
 # PHP-FPM basic config file
-ADD ./conf/fpm.conf /usr/local/etc/php-fpm.d/www.conf
+COPY ./conf/fpm.conf /usr/local/etc/php-fpm.d/www.conf
 
 # Adding startup script for Nginx and PHP
-ADD /entrypoint.sh /entrypoint.sh
+COPY /entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 # Exposing ports
