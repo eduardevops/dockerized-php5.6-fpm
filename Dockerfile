@@ -3,9 +3,11 @@ FROM php:5.6-fpm
 
 # Configuring web
 RUN   mkdir -p /var/www/html/website
+
+# Copy config files into the container
 COPY  ./conf/website.conf /etc/nginx/sites-available/website.conf
 COPY  ./conf/php.ini /usr/local/etc/php/
-COPY  web /var/www/html/website
+# COPY  web /var/www/html/website
 
 # Install Nginx and other necessary libraries
 RUN apt-get update && apt-get install -y --no-install-recommends nginx supervisor libpng-dev libjpeg-dev libjpeg62-turbo libmcrypt4 libmcrypt-dev libcurl3-dev libxml2-dev libxslt-dev libicu-dev  && rm -rf /var/lib/apt/lists/*
